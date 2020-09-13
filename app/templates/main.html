@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+               {{ form.url.label }}<br>
+               {{ form.url(size=32) }}
+            </p>
+            <p>
+                {{ form.submit() }}
+            </p>
+        </form>
+    </body>
+</html>
