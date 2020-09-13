@@ -1,0 +1,6 @@
+flask
+Flask-SQLAlchemy
+WTForms
+Flask-WTF
+requests
+gunicorn
