@@ -1,6 +1,10 @@
 <html>
+    <head>
+        <title>Url-shortener</title>
+    </head>
     <body>
         <form action="" method="post" novalidate>
+
             {{ form.hidden_tag() }}
             <p>
                {{ form.url.label }}<br>
@@ -8,6 +12,10 @@
             </p>
             <p>
                 {{ form.submit() }}
+            </p>
+            <p>
+               {{ form.custom.label }}<br>
+               {{ form.custom(size=32) }}
             </p>
         </form>
     </body>
