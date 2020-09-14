@@ -15,7 +15,7 @@ def short_save(url, cust):
             newurl = cust
         else:
             newurl = ''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase) for x in range(8))
-        if Href.query.filter_by(newurl=newurl).first():
+        if db.session.query(Href.new_url).filter(Href.new_url == newurl).first():
             return "This short url is already used, try another one"
         href = Href(url, newurl)
         db.session.add(href)
