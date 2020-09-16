@@ -7,7 +7,9 @@ import requests
 
 
 def short_save(url, cust):
-    if requests.get(url).status_code != 200:
+    try:
+        response = requests.get(url)
+    except requests.ConnectionError as exeption:
         return "your link is not valid"
     a = Href.query.filter_by(url=url).first()
     if not a:
