@@ -4,12 +4,11 @@ from app import db
 import random
 import string
 import requests
+import validators
 
 
 def short_save(url, cust):
-    try:
-        response = requests.get(url)
-    except requests.ConnectionError as exeption:
+    if not validators.url(url):
         return "your link is not valid"
     a = Href.query.filter_by(url=url).first()
     if not a:
